@@ -81,6 +81,32 @@ describe('calculator functionality', function() {
   expect(running_total.getAttribute('value')).to.eventually.equal('-2')  
  })
 
+ it('should work with decimals', function(){
+  four.click();
+  add.click();
+  four.click();
+  divide.click();
+  three.click();
+  equals.click();
+  expect(running_total.getAttribute('value')).to.eventually.equal('2.6666666666666665')  
+ })
+
+ it('should work with large numbers', function(){
+  four.click();
+  four.click();
+  four.click();
+  four.click();
+  four.click();
+  four.click();
+  multiply.click();
+  two.click();
+  two.click();
+  two.click();
+  two.click();
+  equals.click();
+  expect(running_total.getAttribute('value')).to.eventually.equal('987554568') 
+ })
+
 });
 
 
