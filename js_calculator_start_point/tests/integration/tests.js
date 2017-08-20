@@ -8,6 +8,7 @@ describe('calculator functionality', function() {
     browser.ignoreSynchronization = true;
     browser.get('http://localhost:3000');
     running_total = element(by.css('#running_total'))
+    zero = element(by.css('#number0'));
     two = element(by.css('#number2'));
     three = element(by.css('#number3'));
     four = element(by.css('#number4'));
@@ -105,6 +106,14 @@ describe('calculator functionality', function() {
   two.click();
   equals.click();
   expect(running_total.getAttribute('value')).to.eventually.equal('987554568') 
+ })
+
+ it('should work if you divide by 0', function(){
+  four.click();
+  divide.click();
+  zero.click();
+  equals.click();
+  expect(running_total.getAttribute('value')).to.eventually.equal('0') 
  })
 
 });
