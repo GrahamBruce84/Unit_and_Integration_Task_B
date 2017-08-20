@@ -121,10 +121,11 @@ describe('calculator', function () {
   })
 
   it('should clr the running total after adding 8 and subtracting 7 from the previous total', function(){
-    calculator.add(8);
-    calculator.subtract(7);
+    calculator.numberClick(8);
+    calculator.operatorClick('+')
+    calculator.numberClick(7);
     calculator.operatorClick('=');
-    assert.equal(calculator.runningTotal, 11);
+    assert.equal(calculator.runningTotal, 15);
     calculator.clearClick();
     assert.equal(calculator.runningTotal, 0);
   })
